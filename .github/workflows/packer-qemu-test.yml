@@ -29,6 +29,7 @@ jobs:
 
       - name: Generate cloud-init data
         run: |
+          apt install genisoimage
           echo '#cloud-config
           chpasswd:
             expire: False
