@@ -29,7 +29,6 @@ jobs:
 
       - name: Generate cloud-init data
         run: |
-          sudo apt install genisoimage
           echo '#cloud-config
           chpasswd:
             expire: False
@@ -38,8 +37,8 @@ jobs:
           ssh_pwauth: True' > user-data
           echo '' > meta-data
       
-      - name: Install qemu
-        run: sudo apt-get update && sudo apt-get install qemu-system -y
+      - name: Install runner dependencies
+        run: sudo apt-get update && sudo apt-get install qemu-system genisoimage -y
       
       - name: Run packer init
         id: init
