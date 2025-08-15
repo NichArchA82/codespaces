@@ -2,8 +2,7 @@ name: Packer build qemu
 
 on:
   push:
-    branches:
-      - "feat/add-kvm-acceleration"
+    '*'
 
 jobs:
   build:
