@@ -46,4 +46,4 @@ jobs:
 
       - name: Run packer build
         id: build
-        run: packer build -var glueops_codespaces_container_tag=v0.98.0 -var image_password=${{ env.IMAGE_PASSWORD }} qemu.pkr.hcl
+        run: export PACKER_LOG=1 && packer build -var glueops_codespaces_container_tag=v0.98.0 -var image_password=${{ env.IMAGE_PASSWORD }} qemu.pkr.hcl
